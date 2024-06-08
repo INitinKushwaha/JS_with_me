@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Working of Async</title>
+</head>
+<body>
+    <h1>Nitin Aur JS</h1>
+    <button id = "start">Start</button>
+    <button id = "stop">Stop</button>
+</body>
+<script>
+    const sayDate =function(){
+       console.log("Nitin Aur JS", Date.now());
+    }
+     
+    let startt;
+   document.querySelector('#start').addEventListener('click',function(){
+       startt = setInterval(sayDate,1000);
+    })
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearInterval(startt);
+    })
+    
+
+</script>
+</html>

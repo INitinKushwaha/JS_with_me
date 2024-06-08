@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nitin Aur Code</title>
+</head>
+<body>
+    <h1>Nitin Aur Code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const saynitin = function(){
+        console.log('Nitin Aur Code');
+    }
+
+    const changetext = function(){
+        document.querySelector('h1').
+        innerHTML = 'One of my work';
+    }
+
+
+    const changeme = setTimeout(changetext,2000)
+
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(changeme);
+        console.log('Stopped');
+    })
+    // setTimeout(saynitin,2000)
+
+//     setTimeout(function(){
+// console.log('Nitin Aur Code');
+//     },2000)
+
+
+    // setInterval(function(){
+    //     console.log('Nitin Aur Code');
+    // },2000)
+</script>
+</html>

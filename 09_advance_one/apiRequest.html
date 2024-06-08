@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ApiRequestt</title>
+</head>
+<body>
+    <div class="container">
+        <button>GET PHOTO AND FOLLOWER</button>
+    </div>
+</body>
+<script>
+    const requesturl = 'https://api.github.com/users/INitinKushwaha'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET',requesturl)
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState === 4){
+            const data =JSON.parse( this.responseText)
+           document.querySelector('button').addEventListener('click',function(){
+            const img = document.createElement('img')
+            img.src = data.avatar_url
+            document.body.appendChild(img)
+            const followers = document.createElement('h1')
+            followers.innerHTML = `followers : ${data.followers}`
+            document.body.appendChild(followers)
+           })
+        }
+    }
+    xhr.send()
+</script>
+</html>
